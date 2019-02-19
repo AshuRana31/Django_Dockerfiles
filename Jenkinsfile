@@ -1,9 +1,6 @@
 pipeline
 {
-  agent 
-  {
-    Dockerfile
-  } 
+  // agent 
   stages
   {
     stage("Build")
@@ -22,7 +19,7 @@ pipeline
         sh 'docker run -p 8000:8080'
       }
     }
-    stage 
+    stage("Push Image ")
     {
       steps
       {
