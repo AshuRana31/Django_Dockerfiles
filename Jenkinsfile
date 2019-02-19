@@ -16,7 +16,7 @@ pipeline
       steps
       {
         sh 'echo "Running the image" '
-        sh 'sudo docker run -p 8000:8080'
+        sh 'sudo docker run -p 8000:8080 -v /var/lib/docker.sock:/var/lib/docker.sock '
       }
     }
     stage("Push Image ")
