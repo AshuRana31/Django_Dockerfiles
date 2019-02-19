@@ -8,7 +8,7 @@ pipeline
       steps
       {
         sh 'echo "Building"'
-        sh 'docker build .'
+        sh 'sudo docker build .'
       }
     }
     stage("Run")
@@ -16,7 +16,7 @@ pipeline
       steps
       {
         sh 'echo "Running the image" '
-        sh 'docker run -p 8000:8080'
+        sh 'sudo docker run -p 8000:8080'
       }
     }
     stage("Push Image ")
@@ -24,7 +24,7 @@ pipeline
       steps
       {
         sh 'echo "Pushing images"'
-        sh 'docker push'
+        sh 'sudo docker push'
       }
     }
   }
