@@ -1,29 +1,33 @@
 pipeline
 {
-  agent any 
+  agent 
+  {
+    Dockerfile
+  } 
   stages
   {
     stage("Build")
     {
       steps
       {
-        echo "Building"
-        sudo docker build .
+        sh 'echo "Building"'
+        sh 'docker build .'
       }
+    }
     stage("Run")
     {
       steps
       {
-        echo "Running the image 
-        sudo docker run -p 8000:8080
+        sh 'echo "Running the image" '
+        sh 'docker run -p 8000:8080'
       }
     }
     stage 
     {
       steps
       {
-        echo "Pushing images"
-        docker push
+        sh 'echo "Pushing images"'
+        sh 'docker push'
       }
     }
   }
