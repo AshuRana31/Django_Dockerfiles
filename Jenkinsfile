@@ -20,8 +20,7 @@ pipeline
       steps
       {
         sh 'echo "Pushing images"'
-        // sh 'sudo docker login -u="prachijain" -p="prachi11" '
-        withDockerRegistry([ credentialsId: "Dockerhub_credential", url: "" ])
+        withDockerRegistry([ credentialsId: "Dockerhub_credential", url: "https://registry.hub.docker.com" ])
         {
           sh 'sudo docker push prachijain/firsttry:djangoimage '
         }
