@@ -20,6 +20,7 @@ pipeline
       steps
       {
         sh 'echo "Pushing images"'
+        sh 'sudo chmod 666 /var/run/docker.sock'
         withDockerRegistry([ credentialsId: "Dockerhub_credential", url: "https://registry.hub.docker.com" ])
         {
           sh 'sudo docker push prachijain/firsttry:djangoimage '
