@@ -29,8 +29,8 @@ pipeline
       {
         sh 'echo "Pushing images"'
         //sh 'sudo docker login "${Dockerhub_credential}" '
-        sh 'docker.build credential+":$BUILD_NUMBER"'
-        sh 'sudo docker push prachijain/firsttry:djangoimage '
+        sh ' withDockereRegistry([credentialID:' prachijain', url : 'https://docker.io/prachijain])
+                             { sh 'sudo docker push prachijain/firsttry:djangoimage ' } '
       }
     }
   }
