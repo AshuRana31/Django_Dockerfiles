@@ -22,8 +22,8 @@ pipeline {
         stage('pushing image on docker hub') {
             steps {
               
-                 script {
-                     sh 'chmod 666 /var/run/docker.sock'
+                 sh 'echo "push image"'
+                     sh ' sudo chmod 666 /var/run/docker.sock'
 
 
     withDockerRegistry([credentialsId: "harshi19", url: "https://registry.hub.docker.com"]) {
