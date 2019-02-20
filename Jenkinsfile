@@ -10,7 +10,7 @@ pipeline
         sh 'echo "Building"'
         script 
         {
-          image = (sh ${'sudo docker build .'})
+          sh 'sudo docker build .'
           sh 'echo "Image id is " + image.id'
         }
       }
