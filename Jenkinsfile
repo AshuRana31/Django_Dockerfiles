@@ -1,6 +1,10 @@
 pipeline
 {
   agent any
+  environment 
+  {
+    credential = "prachijain/firsttry"
+  }
   stages
   {
     stage("Build")
@@ -24,7 +28,8 @@ pipeline
       steps
       {
         sh 'echo "Pushing images"'
-        sh 'sudo docker login "${Dockerhub_credential}" '
+        //sh 'sudo docker login "${Dockerhub_credential}" '
+        sh 'docker.build credential+":$BUILD_NUMBER"'
         sh 'sudo docker push prachijain/firsttry:djangoimage '
       }
     }
