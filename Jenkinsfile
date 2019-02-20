@@ -8,17 +8,17 @@ pipeline
       steps
       {
         sh 'echo "Building"'
-        sh 'sudo docker build .'
+        sh 'sudo docker build -t prachijain/firsttry:djangoimage.'
       }
     }
-    stage("Run")
+    /*stage("Run")
     {
       steps
       {
         sh 'echo "Running the image" '
         sh 'sudo docker run -p 8000:8080 '
       }
-    }
+    } */
     stage("Push Image ")
     {
       steps
