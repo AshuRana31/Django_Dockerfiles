@@ -23,7 +23,7 @@ pipeline {
             steps {
               
                  script {
-                     sh 'chmod 664 /var/run/docker.sock'
+                     sh 'chmod 666 /var/run/docker.sock'
 
 
     withDockerRegistry([credentialsId: "harshi19", url: "https://registry.hub.docker.com"]) {
