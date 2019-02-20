@@ -16,13 +16,12 @@ pipeline {
         }
         stage('building container') {
             steps {
-                sh 'sudo docker run -p 8080:8080 -ti -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/usr/bin/docker 61afb0ac218f '
-                echo 'building container....'
+                sh 'sudo docker run -p 8080:8080' 
             }
         }
         stage('pushing image on docker hub') {
             steps {
-                sh 'docker push harshita19/imageharshita19:firstimage'
+                sh 'sudo docker push harshita19/imageharshita19:firstimage'
                 echo 'pushing image on docker hub....'
             }
         }
