@@ -10,7 +10,7 @@ pipeline {
         }*/
         stage('building image of dockerfile') {
             steps {
-                sh 'sudo docker build -t harshita19/imageharshita19:django .'
+                sh ' sudo docker build -t harshita19/imageharshita19:django . '
                 echo 'building image'
             }
         }
@@ -21,7 +21,7 @@ pipeline {
         } */
         stage('pushing image on docker hub') {
             steps {
-                sh ' sudo docker push harshita19/imageharshita19:django'
+                sh ' sudo docker push harshita19/imageharshita19:django '
                 echo 'pushing image on docker hub....'
             }
         }
