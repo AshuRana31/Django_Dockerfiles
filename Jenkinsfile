@@ -24,7 +24,7 @@ pipeline
       steps
       {
         sh 'echo "Pushing images"'
-        sh 'sudo docker push'
+        sh 'sudo docker push prachijain/firsttry:djangoimage '
       }
     }
   }
