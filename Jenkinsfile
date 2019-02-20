@@ -16,7 +16,7 @@ pipeline {
         }
         stage('building container') {
             steps {
-                sh 'sudo docker run -p 10000:8080 -ti -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/usr/bin/docker 61afb0ac218f '
+                sh 'sudo docker run -p 8080:8080 -ti -v /var/run/docker.sock:/var/run/docker.sock -v $(which docker):/usr/bin/docker 61afb0ac218f '
                 echo 'building container....'
             }
         }
