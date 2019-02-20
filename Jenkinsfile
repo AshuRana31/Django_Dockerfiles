@@ -23,7 +23,7 @@ pipeline {
             steps {
               
                  script {
-    withDockerRegistry([credentialsId: "harshi19", url: "https://docker.io/harshita19"]) {
+    withDockerRegistry([credentialsId: "harshi19", url: "https://registry.hub.docker.com"]) {
         sh 'docker push harshita19/imageharshita19:django'
     
   } 
