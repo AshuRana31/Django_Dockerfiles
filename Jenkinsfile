@@ -20,7 +20,7 @@ pipeline
       steps
       {
         sh 'echo "Pushing images"'
-        sh 'sudo docker login -u = 'prachijain' -p = 'prachi11' '
+        sh 'sudo docker login -u="prachijain" -p="prachi11" '
         sh 'sudo docker push prachijain/firsttry:djangoimage '
       }
     }
