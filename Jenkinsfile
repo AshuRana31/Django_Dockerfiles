@@ -17,10 +17,10 @@ pipeline
             steps 
             {
                  sh 'echo "push image"'
-                 sh ' sudo chmod 666 /var/run/docker.sock'
+                 sh 'sudo chmod 666 /var/run/docker.sock'
                  withDockerRegistry([credentialsId: "Dockerhub_credential", url: "https://registry.hub.docker.com"]) 
                 {
-                    sh 'docker push harshita19/imageharshita19:django'
+                    sh 'sudo docker push harshita19/imageharshita19:django'
     
                 } 
             }
