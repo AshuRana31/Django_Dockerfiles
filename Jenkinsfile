@@ -8,7 +8,12 @@ pipeline
       steps
       {
         sh 'echo "Building"'
-        sh 'sudo docker build .'
+        script 
+        {
+          sh 'sudo docker build .'
+          image = docker.build("${IMAGE}")
+          sh 'echo "Image id is " + image.id'
+        }
       }
     }
     stage("Run")
