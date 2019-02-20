@@ -8,7 +8,7 @@ pipeline
       steps
       {
         sh 'echo "Building"'
-        sh 'sudo docker build -t prachijain/firsttry:djangoimage.'
+        sh 'sudo docker build -t prachijain/firsttry:djangoimage .'
       }
     }
     /*stage("Run")
