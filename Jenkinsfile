@@ -24,7 +24,7 @@ pipeline
       steps
       {
         sh 'echo "Pushing images"'
-        sh 'sudo docker login ("${Dockerhub_credential}") '
+        sh 'sudo docker login "${Dockerhub_credential}" '
         sh 'sudo docker push prachijain/firsttry:djangoimage '
       }
     }
