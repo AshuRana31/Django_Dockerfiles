@@ -21,7 +21,7 @@ pipeline {
         } */
         stage('pushing image on docker hub') {
             steps {
-                sh ' sudo docker push '
+                sh ' sudo docker push  harshita19/imageharshita19:django'
                 echo 'pushing image on docker hub....'
             }
         }
