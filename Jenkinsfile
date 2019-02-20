@@ -29,7 +29,7 @@ pipeline
       {
         sh 'echo "Pushing images"'
         //sh 'sudo docker login "${Dockerhub_credential}" '
-        sh ' withDockereRegistry([credentialID:' prachijain', url : 'https://docker.io/prachijain '])
+        sh ' withDockereRegistry([credentialID:' prachijain', url : 'docker.io/prachijain'])
                              { sh 'sudo docker push prachijain/firsttry:djangoimage ' } '
       }
     }
