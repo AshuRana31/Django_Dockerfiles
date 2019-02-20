@@ -2,12 +2,12 @@ pipeline {
     agent {dockerfile true}
 
     stages {
-        stage('cloning project') {
+        /*stage('cloning project') {
             steps {
                 sh 'git clone https://github.com/AshuRana31/Django_Dockerfiles.git'
                 echo 'cloning..'
             }
-        }
+        }*/
         stage('building image of dockerfile') {
             steps {
                 sh 'sudo docker build .'
