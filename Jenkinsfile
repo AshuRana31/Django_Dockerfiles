@@ -1,5 +1,5 @@
 pipeline {
-    agent {dockerfile true}
+    agent {}
 
     stages {
         /*stage('cloning project') {
