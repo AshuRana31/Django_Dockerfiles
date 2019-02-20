@@ -10,18 +10,18 @@ pipeline {
         }*/
         stage('building image of dockerfile') {
             steps {
-                sh 'sudo docker build .'
+                sh 'sudo docker build -t harshita19/imageharshita19:django .'
                 echo 'building image'
             }
         }
-        stage('building container') {
+      /*  stage('building container') {
             steps {
                 sh 'sudo docker run -p 8080:8080' 
             }
-        }
+        } */
         stage('pushing image on docker hub') {
             steps {
-                sh 'sudo docker push harshita19/imageharshita19:firstimage'
+                sh ' sudo docker push '
                 echo 'pushing image on docker hub....'
             }
         }
