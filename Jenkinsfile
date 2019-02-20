@@ -21,9 +21,17 @@ pipeline {
         } */
         stage('pushing image on docker hub') {
             steps {
-                sh 'docker login -u harshita19 -p lhv@3005 '
+              
+                script {
+    withDockerRegistry([credentialsId: 'harshita19', url: 'docker.io/harshita19']) {
+      sh 'docker push harshita19/imageharshita19:django'
+    ....
+  }
+                /*
+                sh ' sudo docker login -u harshita19 -p lhv@3005 '
                 sh ' sudo docker push harshita19/imageharshita19:django '
                 echo 'pushing image on docker hub....'
+            */
             }
         }
         
